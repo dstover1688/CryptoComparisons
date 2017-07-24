@@ -4,6 +4,16 @@ import sys
 import time
 
 ###
+#whattomine api
+#only place i've found with ubiq (UBQ coin) info
+coin='Ubiq'
+uri='http://www.whattomine.com/coins.json'
+r=requests.get(uri).json()
+reward= (r['coins'][coin]['block_reward'])
+difficulty = (r['coins'][coin]['difficulty'])
+print(reward, difficulty)
+
+###
 #coinwarz api
 coin='etc'
 apik='942f61a7fda04a18ba52af7765b3d848'
