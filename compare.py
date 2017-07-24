@@ -3,13 +3,24 @@ import json
 import sys
 import time
 
-###<#
+###
+#coinwarz api
+coin='etc'
+apik='942f61a7fda04a18ba52af7765b3d848'
+uri='http://www.coinwarz.com/v1/api/coininformation/?apikey=' + apik + '&cointag=' + coin
+r=requests.get(uri).json()
+reward=(r['Data']['BlockReward'])
+difficulty=(r['Data']['Difficulty'])
+print(reward, difficulty)
+
+###
 coin='etc'
 rewardurl='https://www.cryptocompare.com/api/data/coinsnapshot/?fsym=ETH&tsym=BTC'
 rewardreq=requests.get(rewardurl).json()
 reward = (rewardreq['Data']['BlockReward'])
 print(reward)
-#>
+#
+
 ###
 #Get statistic for a given coin
 def getstats(coin,hash):
