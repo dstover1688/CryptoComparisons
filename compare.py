@@ -47,12 +47,12 @@ def getstats(coin,hash):
  r = requests.get(url + coin).json()
 
  data = {
-    'blockTime': blockTimeAvg,
-    'difficulty': difficultyAvg,
+    'blockTime': float(blockTimeAvg),
+    'difficulty': float(difficultyAvg),
     'priceUsd': float(r['price']['usd']),
     'lastUpdate': time.time(),
-    'blockReward' : reward,
-    'coinsOut' : ((hash * reward) / difficultyAvg) * 60 * 60
+    'blockReward' : float(reward),
+    'coinsOut' : float(((hash * reward) / difficultyAvg) * 60 * 60)
  }
 
  print('ethereumStates = ' + json.dumps(data) + ';')
