@@ -6,12 +6,12 @@
 ##coin to mine=fastest to target coin stack size in 30d?
 
 def calculateCoins([string[]]coins){
-  
-  $coinObject()
+  #create an empty object to store the list of coin info
+  coinObject = {}
   
   foreach (coin in coins){
-  
-    $coinValue()
+    #create an empty object to store the relevant data for each coin as the loop iteerates
+    coinValue = {}
   
     switch coin {
       'etc' = {
@@ -37,5 +37,5 @@ def calculateCoins([string[]]coins){
  #do math to sort coins here
  coinObjectSorted = coinObject.sort_keys
 
-#  print('Sorted Coin Object' = ' + json.dumps(data, sort_keys=True) + ';')
+#  print('Sorted Coin Object' = ' + json.dumps(coinObject, sort_keys=True) + ';')
 }
